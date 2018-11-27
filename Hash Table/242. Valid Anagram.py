@@ -8,12 +8,12 @@ class Solution(object):
         if len(s) != len(t):
             return False
 
-        alpha = [0] * 26
-        beta = [0] * 26
+        alpha = {}
+        beta = {}
         for c in s:
-            alpha[ord(c) - 97] += 1
+            alpha[c] = alpha.get(c, 0) + 1
         for c in t:
-            beta[ord(c) - 97] += 1
+            beta[c] = beta.get(c, 0) + 1
         return alpha == beta
 
 solution = Solution()
